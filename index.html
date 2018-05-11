@@ -143,22 +143,22 @@
         <div class="col-sm-8">
           <h2 class="featurette-heading"><a class="nostyle" name="big-data">Plan Mapping</a></h2>
           <h3>Overview of Where and How to Implement the System</h3>
-          <p class="lead">Monitoring one or several frequencies can be benefical to understanding how your 
+          <p class="lead">Monitoring one or several frequencies can be beneficial to understanding how your 
             devices communicate and the overall activity of your wireless infrastructure.
-            The RF monitoring system described in this project can be comprized anywhere from a 
-            single station, or up to an unlimmited amount depending on accuracy and area coverage 
-            desired. A station or a node is comprized of several elements, a computer configured 
+            The RF monitoring system described in this project can be comprised anywhere from a 
+            single station, or up to an unlimited amount depending on accuracy and area coverage 
+            desired. A station or a node is comprised of several elements, a computer configured 
             and pre-set with all the needed software, an internet connection, SDR (HackRF or 
             RTL-SDR), antennas specific to the needed frequency and power supply for all the 
             components.
-             
-            All stations should be evenly spread out accross the whole area that will
+            </p><p class="lead"> 
+            All stations should be evenly spread out across the whole area that will
             be monitored. Depending on the devices and protocols used by those devices, the system
             and its respective nodes could benefit from a closer proximity to each other, 
             especially when the monitored devices have faint signal signature. 
-            In our project setup three nodes were established to provide catured signal accuracy 
+            In our project setup three nodes were established to provide captured signal accuracy 
             and to provide a better general idea of signal location of origin. The nodes of our 
-            setup were alligned in a liniar pattern with a center and two outer section. The    
+            setup was aligned in a linear pattern with a center and two outer section. The    
             center, concentrated on the monitored device. </p>
         </div>
       </div>
@@ -174,8 +174,9 @@
           <h3>Station - Computer Configuration</h3>
           <p class="lead"> Any type of computing device which can run Linux is a suitable choice as long as the 
             the hardware capabilities meet the computing needs of the software being run. In most 
-            cases this will require a system more powerful then a Raspberry Pi but less powerfull
+            cases this will require a system more powerful than a Raspberry Pi but less powerful
             then a standard desktop computer.
+            </p><p class="lead"> 
             Configurating the computer which will execute and host all the activity of a node needs 
             to be able to support the needed software and hardware, because of this a Linux based 
             operating systems is critical. Within the project a Ubuntu based version of Linux was 
@@ -194,19 +195,19 @@
         <div class="col-sm-8">
           <h2 class="featurette-heading"><a class="nostyle" name="build-and-delivery-tools">RF Tools</a></h2>
           <h3>Software Defined Radio Setup</h3>
-          <p class="lead"> The SDR tools used for the project are mainly limmited to HackRF and RTL-SDR. However
+          <p class="lead"> The SDR tools used for the project are mainly limited to HackRF and RTL-SDR. However
             if there is a need for jamming, for testing purposes, BladeRF and its configuration are 
             covered in the testing tab.
-            
+            </p><p class="lead"> 
             RTL-SDR setup is summarized with the following commands listed in the Driver <a href="https://ranous.files.wordpress.com/2018/02/rtl-sdr4linux_quickstartv2-18.pdf">Installation</a> 
             section in the guide by Kenn Ranous. To test if your RTL-SDR is properly recognized when
             connected type the following command in terminal:
             rtl_test -t
-            
+            </p><p class="lead"> 
             HackRF setup is summarized with the following commands listed in the <a href="https://github.com/mossmann/hackrf/wiki/Operating-System-Tips">Github</a> page of the
-            HackRF developer, Michael Ossmann. Through following the prepare instrunction and
+            HackRF developer, Michael Ossmann. Through following the prepare instruction and
             installation through package manager, your system will be ready to use a HackRF.
-            
+            </p><p class="lead"> 
             Testing the HackRF connection, once the installation is complete, can be done through the
             following command in terminal:
             hackrf_info
@@ -231,7 +232,7 @@
             stations recordings, this is done in the config file of the software after it is 
             installed and prepared. To install GammaRF and all its needed libraries following
             closely the list of <a href="http://www.gammarf.io/client.html#installation">instructions</a> is important.              
-            
+            </p><p class="lead">
             After everything is configured and set you would configure the connector module to
             properly reflect the data streamed over to the GammaRF server toward your database.
             Navigate to the location where GammaRF is installed, then open the modules folder and
@@ -255,11 +256,11 @@
           <h3>ElasticSearch</h3>
           <p class="lead">After setup of the all the initial components defining a organized location to store all
            the collected data is very important. This is done trough the setup and use of a database,
-           an example of which is ElasticSearch. This would most eficiently be set through Docker and 
+           an example of which is ElasticSearch. This would most efficiently be set through Docker and 
            the following ElasticSeach <a href="https://github.com/sofwerx/docker-elastic">build</a>
-           The first step is installing the Docker and Compose libary by running "install docker - 
+           The first step is installing the Docker and Compose library by running "install docker - 
            compose". 
-           
+           </p><p class="lead"> 
            With Docker configured, going within the directory of the cloned repository for 
            the ElasticSeach build and executing "docker-compose up" in terminal. To test you can 
            check the following <a href="http://localhost:5601">link</a> for activity. To establish the input
@@ -278,25 +279,25 @@
         <div class="col-sm-8">
           <h2 class="featurette-heading"><a class="nostyle" name="insight-reliability-performance">Signal Monitoring</a></h2>
           <h3>Zwave and Motion Sensors</h3>
-          <p class="lead">Depending on the signal monitored there is a variaty of factors to be taken into account.
-            Identifying the frequency alone will most of the time suffucient, however understanding 
+          <p class="lead">Depending on the signal monitored there is a variety of factors to be taken into account.
+            Identifying the frequency alone will most of the time sufficient, however understanding 
             the activity of the protocol,  activity of device communication and activity of 
             interference are crucial in identifying a baseline of what you will be monitoring.
-            
+            </p><p class="lead"> 
             The protocol, or way of communication between different devices, is the one of the most 
-            complicated parts of transfering information. In the Mad Jack's Range project Z-Wave was 
+            complicated parts of transferring information. In the Mad Jack's Range project Z-Wave was 
             the monitored protocol. Due to brief communication method the type of monitoring, needed 
             for Z-Wave, required a designated SDR which would constantly calculate the frequency 
-            activity. Other protocoles like WiFi/GSM/Bluetooth have much hight data input and activity
+            activity. Other protocols like WiFi/GSM/Bluetooth have much higher data input and activity
             and can be averaged every several miliseconds, hence they are monitored through a wide 
             spectrum.
-            
+            </p><p class="lead"> 
             Knowing the devices actively interfering/being monitored with the frequency watched helps
             understand where exactly and how much activity there actually is present. Through 
-            analysing signal strength of specific devices, if stationary, they can be easility 
+            analyzing signal strength of specific devices, if stationary, they can be easily 
             identified as a characteristic of that device. This overall will help properly organize 
             and the infrastructure, mapping of the devices and the node that will monitor them, and 
-            identify the paramaters which would seperate attacks from your device communicating.</p>
+            identify the parameters which would separate attacks from your device communicating.</p>
         </div>
       </div>
 
@@ -316,11 +317,11 @@
             inputting the -help command. This will list all the possible inputs like viewing all 
             connected devices or even running a module on a frequency. Exploring these options is 
             vital for properly implementing the right module and initializing the proper monitoring.
-            
+            </p><p class="lead"> 
             To begin capturing data and viewing all the inputs captures you may resort to the 'run'  
             command with the included module, for monitoring wide spectrum 'scanner' or 'single' for
             a single frequency like Z-Wave, finally a digit to define which device it will run on.
-            For a wide spectrum of frequencies you will need add each frequency seperately. Through 
+            For a wide spectrum of frequencies you will need add each frequency separately. Through 
             using the 'interesting_add [Frequency in Hz]', a frequency is designated to the list of 
             what is watch and recorded. Setting the right parameter in the Single module is 
             important, with it being low, allows for interference to be passed trough the filter, on 
@@ -342,22 +343,24 @@
           <p class="lead">The final part of implementing the system is to test and identify the usability and 
             preset a baseline which can be shown as an attack in an algorithm. Some tools useful for
             the testing process are as follows:
-            
+            </p><p class="lead"> 
             GNU Radio - apt install gnuradio
+            </p><p class="lead">
             <a href="https://osmocom.org/projects/sdr/wiki/GrOsmoSDR">Osmocom SDR </a>
-            <a href="http://gqrx.dk/download/install-ubuntu">GQRX</a>
-            
+            </p><p class="lead">
+          <a href="http://gqrx.dk/download/install-ubuntu">GQRX</a>
+            </p><p class="lead"> 
             With configuration of the listed tools or any other type transmitters you can test whether
-            introducing a replay/jamming attack amongs the devices being monitored properly registers.
-            
+            introducing a replay/jamming attack among the devices being monitored properly registers.
+            </p><p class="lead"> 
             Setting HackRF's with GQRX to watch the desired frequency and this OsmocomSDR command
             'sudo osmocom_siggen -a hackrf -s 2000000 -f 908420000 -g 67 --sine -x 25000' will enable
             you to transmit a signal at a wanted frequency and verify its effectiveness. However you
             should note that using a HackRF might have insufficient result in jamming due to the 
-            weaker power it emmits. Verification of the attack should be made through checking the 
+            weaker power it emits. Verification of the attack should be made through checking the 
             device communication and the database for proper results (lack of communication and 
             increase in hits). 
-            
+            </p><p class="lead"> 
             Using any testing involving transmission of signal must include integration of a Faraday 
             cage or other shielding techniques. Otherwise depending on the frequency, transmission of 
             signal could lead to interference with crucial public and private spectrums which are 
